@@ -2,6 +2,8 @@
 <p>
 Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.
 </p>
+
+<h2>Epic Bitmap Renderer, the outOfMemoryError slayer</h2>
 <p>
 This Android Bitmap decoder library follows the Google conventions for displaying bitmaps efficiently
 (see <a href="https://developer.android.com/training/displaying-bitmaps/index.html?hl=es">Google guide</a> for more info), offering these features:
@@ -17,3 +19,9 @@ This Android Bitmap decoder library follows the Google conventions for displayin
         <b>Image auto caching.</b> Rendering methods automatically save rendered Bitmaps in memory and disk caches using dual cache EpicBitmapCache. If an image is previously rendered, next time it will be extracted from cache if available, and it will be used instead of re-rendering Bitmap from source again. This entire process is automatic, as render methods handle cache themselves, and saves a lot of memory consumption from heavy processes like rendering images from disk or internet.
     </li>
 </ul>
+
+<h2>How to use Epic Bitmap Renderer in your app</h2>
+<p>In process...</p>
+
+<h2>How can developers improve Epic Bitmap Renderer</h2>
+<p>In process...</p>
