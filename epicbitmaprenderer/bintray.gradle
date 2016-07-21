@@ -24,9 +24,12 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+//def libraryJarFile = file('build/libs/' + artifact + '-' + libraryVersion + '.jar')
+
 artifacts {
     archives javadocJar
     archives sourcesJar
+    //archives libraryJarFile       //Use this artifact to upload library .jar along with .aar
 }
 
 // Bintray
@@ -45,7 +48,8 @@ bintray {
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = allLicenses
-        publish = true
+        publish = false
+        override = false
         publicDownloadNumbers = true
         version {
             desc = libraryDescription

@@ -2,7 +2,34 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group = publishedGroupId                               // Maven Group ID for the artifact
 
+task cleanJar(type: Delete) {
+    description 'Cleans previous library\'s .jar if present.'
+    delete 'build/libs/' + artifact + '-' + libraryVersion + '.jar'
+}
+
+task makeJar(type: Copy, dependsOn: 'cleanJar') {
+    description 'Extracts library\'s .jar and copies it to libs.'
+    from('build/intermediates/bundles/release/')
+    into('build/libs')
+    include('classes.jar')
+    rename('classes.jar', artifact + '-' + libraryVersion + '.jar')
+}
+
+//Alternative to create .jar file
+/*android.libraryVariants.all  { variant ->
+    if (!name.equals("debug")) {
+        def task = project.tasks.create  "jar${artifact + '-' + libraryVersion}", Jar
+        task.dependsOn variant.javaCompile
+        task.from  variant.javaCompile.destinationDir
+        artifacts.add('archives', task);
+    }
+}*/
+
+//Install should execute cleanJar and makeJar tasks
+install.dependsOn makeJar
+
 install {
+
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {

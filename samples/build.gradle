@@ -19,10 +19,19 @@ android {
     }
 }
 
+//Required to direct reference local library .aar
+/*repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}*/
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     //Import EpicBitmapLibrary into sample project
-    compile project(':epicbitmaprenderer')
+    compile project(':epicbitmaprenderer')                                  //Add library from project module
+    //compile 'com.isaacrf.epicbitmaprenderer:epicbitmaprenderer:1.0'       //Or add library from JCenter / Maven Central
+    //compile(name:'epicbitmaprenderer-1.0', ext:'aar')                     //Or add .aar file to libs/ and use folder as repository
 }
