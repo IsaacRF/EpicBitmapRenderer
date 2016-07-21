@@ -30,7 +30,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * An epic Bitmap cache to store data on both memory and disk cache. This class auto manages caches concurrency, size and exposes methods for handling
+ * An epic Bitmap cache to store data on both memory and disk cache. This class auto manages caches concurrency, size and exposes methods for handling.
  */
 public class EpicBitmapCache {
     //region Cache objects
@@ -129,10 +129,11 @@ public class EpicBitmapCache {
     }
 
     /**
-     * Adds or updates a {@link Bitmap} to Memory and Disk cache identified by a key.
+     * <p>Adds or updates a {@link Bitmap} to Memory and Disk cache identified by a key.</p>
      * <p>
      * <b>NOTE:</b> This method uses JPEG format 100% quality by default when compressing image to store it on disk cache.
      * To manually specify format and quality of compression in disk cache, use {@link #put(String, Bitmap, Bitmap.CompressFormat, int)} instead.
+     * </p>
      *
      * @param key    ID of the {@link Bitmap} to retrieve it later
      * @param bitmap {@link Bitmap} to be stored
@@ -143,6 +144,7 @@ public class EpicBitmapCache {
 
     /**
      * Removes an entry from memory and disk cache.
+     *
      * @param key Identifier of value to be removed from cache.
      * @throws IOException In case entry could not be removed from disk cache due to an IO Error.
      */
@@ -222,8 +224,16 @@ public class EpicBitmapCache {
     //region Helper methods
 
     /**
+     *
+     */
+
+    /**
      * Creates a unique subdirectory of the designated app cache directory. Tries to use external
      * but if not mounted, falls back on internal storage.
+     *
+     * @param context    Context from where EpicBitmapCache is being used.
+     * @param uniqueName Unique name for cache directory.
+     * @return {@link File} pointing to cache directory
      */
     public static File getDiskCacheDir(Context context, String uniqueName) {
         File externalCacheDir = context.getExternalCacheDir();

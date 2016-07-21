@@ -22,14 +22,13 @@ import android.graphics.Bitmap;
 
 /**
  * Listener to get a callback when Bitmap is successfully rendered
- *
- * Created by Isaac on 18/05/2016.
  */
 public interface OnBitmapRendered {
 
     /**
      * Callback to be invoked when Bitmap is successfully rendered
+     *
      * @param bitmap {@link Bitmap} object rendered
      */
-    void onBitmapRendered (Bitmap bitmap);
+    void onBitmapRendered(Bitmap bitmap);
 }

@@ -30,9 +30,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- * AsyncTask to decode a Bitmap from file given its path. InSampleSize parameter is forced to the value specified
- * <p/>
- * Created by Isaac on 19/05/2016.
+ * AsyncTask to decode a Bitmap from file given its path. InSampleSize parameter is forced to the value specified.
  */
 public class AsyncDecodeFileForced extends AsyncTask<Void, Void, Bitmap> {
     //region Fields
@@ -50,7 +48,7 @@ public class AsyncDecodeFileForced extends AsyncTask<Void, Void, Bitmap> {
     //region Constructors
 
     /**
-     * All parameters constructor
+     * All parameters constructor.
      *
      * @param path                 Physical path of File in the device storage.
      * @param inSampleSize         Determines how many times image resolution is divided to lower memory usage. Image aspect ratio is not affected by this parameter, just its resolution / quality is lowered.
@@ -70,7 +68,7 @@ public class AsyncDecodeFileForced extends AsyncTask<Void, Void, Bitmap> {
     }
 
     /**
-     * Basic constructor with just the required parameters
+     * Basic constructor with just the required parameters.
      *
      * @param path             Physical path of File in the device storage.
      * @param inSampleSize     Determines how many times image resolution is divided to lower memory usage. Image aspect ratio is not affected by this parameter, just its resolution / quality is lowered.

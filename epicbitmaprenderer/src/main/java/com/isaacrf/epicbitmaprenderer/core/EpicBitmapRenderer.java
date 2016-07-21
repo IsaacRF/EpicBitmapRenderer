@@ -46,7 +46,7 @@ import java.net.URLEncoder;
  * </p>
  * <ul>
  *     <li>
- *         <b>Exposes static asynchronous</b> (and synchronous too, just in case you need it) <b></b>methods</b> to decode {@link Bitmap} objects from different sources <b>out of UI thread</b>,
+ *         <b>Exposes static asynchronous</b> (and synchronous too, just in case you need it) <b>methods</b> to decode {@link Bitmap} objects from different sources <b>out of UI thread</b>,
  *         ensuring that your app runs smoothly.
  *     </li>
  *     <li>
@@ -70,7 +70,7 @@ public final class EpicBitmapRenderer {
     //region Constructors and initialization
 
     /**
-     * Library initializations. This block is called when library is loaded
+     * Library initializations. This block is called when library is loaded.
      */
     static {
         epicBitmapCache = new EpicBitmapCache();
@@ -88,15 +88,17 @@ public final class EpicBitmapRenderer {
     //region Getters / Setters
 
     /**
-     * Gets the instance of the current {@link EpicBitmapCache} object being used as cache
-     * @return Cache in use
+     * Gets the instance of the current {@link EpicBitmapCache} object being used as cache.
+     *
+     * @return Cache in use.
      */
     public static EpicBitmapCache getCache() {
         return epicBitmapCache;
     }
 
     /**
-     * Sets {@link EpicBitmapCache} object to use as cache
+     * Sets {@link EpicBitmapCache} object to use as cache.
+     *
      * @param epicBitmapCache Cache to use by renderer
      */
     public static void setCache(EpicBitmapCache epicBitmapCache) {
@@ -108,11 +110,14 @@ public final class EpicBitmapRenderer {
     //region Rendering Synchronous Methods
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given app resource, using the specified measures to calculate image downsample if needed.
      * Downsample rate is auto-increased if bitmap rendering causes an {@link OutOfMemoryError}.
-     * <p/>
-     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use {@link #decodeBitmapFromResource(Resources, int, int, int, OnBitmapRendered, OnBitmapRenderFailed)}
-     * instead for an asynchronous solution.
+     * </p>
+     * <p>
+     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze,
+     * use {@link #decodeBitmapFromResource(Resources, int, int, int, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
      *
      * @param res       Resources package. You can get default resources package using {@link Activity#getResources()} inside an activity or {@link Context#getResources()} outside if a {@link Context} is available.
      * @param resId     App resource id. Could be either the pure integer value, or the Android resource name (R.drawable.img_name).
@@ -168,9 +173,13 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given app resource, using the inSampleSize specified.
-     * <p/>
-     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use {@link #decodeBitmapFromResource(Resources, int, int, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
+     * <p>
+     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use
+     * {@link #decodeBitmapFromResource(Resources, int, int, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
      *
      * @param res          Resources package. You can get default resources package using {@link Activity#getResources()} inside an activity or {@link Context#getResources()} outside if a {@link Context} is available.
      * @param resId        App resource id. Could be either the pure integer value, or the Android resource name (R.drawable.img_name).
@@ -202,9 +211,13 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a {@link Bitmap} object from a given app resource, at its original dimensions.
-     * <p/>
-     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use {@link #decodeBitmapFromResource(Resources, int, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
+     * <p>
+     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze,
+     * use {@link #decodeBitmapFromResource(Resources, int, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
      *
      * @param res   Resources package. You can get default resources package using {@link Activity#getResources()} inside an activity or {@link Context#getResources()} outside if a {@link Context} is available.
      * @param resId App resource id. Could be either the pure integer value, or the Android resource name (R.drawable.img_name).
@@ -215,11 +228,14 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a {@link Bitmap} object from a given file, using the specified measures to calculate image downsample if needed.
      * Downsample rate is auto-increased if bitmap rendering causes an {@link OutOfMemoryError}.
-     * <p/>
+     * </p>
+     * <p>
      * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use {@link #decodeBitmapFromFile(String, int, int, OnBitmapRendered, OnBitmapRenderFailed)}
      * instead for an asynchronous solution.
+     * </p>
      *
      * @param path      Physical path of File in the device storage.
      * @param reqWidth  Required width of the view where the Bitmap should fit. This parameter doesn't affect image aspect ratio, it's only used to calculate the inSampleSize of the image in case a downsample is required.
@@ -281,10 +297,13 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given file, using the inSampleSize specified.
-     * <p/>
-     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use {@link #decodeBitmapFromFile(String, int, OnBitmapRendered, OnBitmapRenderFailed)}
-     * instead for an asynchronous solution.
+     * </p>
+     * <p>
+     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze,
+     * use {@link #decodeBitmapFromFile(String, int, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
      *
      * @param path         Physical path of File in the device storage.
      * @param inSampleSize Determines how many times image resolution is divided to lower memory usage. Image aspect ratio is not affected by this parameter, just its resolution / quality is lowered.
@@ -322,10 +341,13 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a {@link Bitmap} object from a given file, at its original dimensions.
-     * <p/>
-     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze, use {@link #decodeBitmapFromFile(String, OnBitmapRendered, OnBitmapRenderFailed)}
-     * instead for an asynchronous solution.
+     * </p>
+     * <p>
+     * <b>Important Note:</b> This method is synchronous and can cause UI Thread to freeze,
+     * use {@link #decodeBitmapFromFile(String, OnBitmapRendered, OnBitmapRenderFailed)} instead for an asynchronous solution.
+     * </p>
      *
      * @param path Physical path of File in the device storage.
      * @return Decoded {@link Bitmap} object, ready to use on any View or code.
@@ -390,11 +412,15 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given file asynchronously, using the specified measures to calculate image downsample if needed.
      * Downsample rate is auto-increased if bitmap rendering causes an {@link OutOfMemoryError}.
-     * <p/>
-     * <b>Permissions:</b> If file is outside app's own folders, this method requires the app using the library to use permission android.permissions.READ_EXTERNAL_STORAGE in order to work.
-     * If permission android.permissions.WRITE_EXTERNAL_STORAGE is granted, READ_EXTERNAL_STORAGE permission is also granted automatically.
+     * </p>
+     * <p>
+     * <b>Permissions:</b> If file is outside app's own folders, this method requires the app using the library to
+     * get permission android.permissions.READ_EXTERNAL_STORAGE in order to work. If permission
+     * android.permissions.WRITE_EXTERNAL_STORAGE is granted, READ_EXTERNAL_STORAGE permission is also granted automatically.
+     * </p>
      *
      * @param path                 Physical path of File in the device storage.
      * @param reqWidth             Required width of the view where the Bitmap should fit. This parameter doesn't affect image aspect ratio, it's only used to calculate the inSampleSize of the image in case a downsample is required.
@@ -410,11 +436,15 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given file asynchronously, using the inSampleSize specified.
      * Downsample rate is auto-increased if bitmap rendering causes an {@link OutOfMemoryError}.
-     * <p/>
-     * <b>Permissions:</b> If file is outside app's own folders, this method requires the app using the library to use permission android.permissions.READ_EXTERNAL_STORAGE in order to work.
-     * If permission android.permissions.WRITE_EXTERNAL_STORAGE is granted, READ_EXTERNAL_STORAGE permission is also granted automatically.
+     * </p>
+     * <p>
+     * <b>Permissions:</b> If file is outside app's own folders, this method requires the app using the library to
+     * get permission android.permissions.READ_EXTERNAL_STORAGE in order to work. If permission
+     * android.permissions.WRITE_EXTERNAL_STORAGE is granted, READ_EXTERNAL_STORAGE permission is also granted automatically.
+     * </p>
      *
      * @param path                 Physical path of File in the device storage.
      * @param inSampleSize         Determines how many times image resolution is divided to lower memory usage. Image aspect ratio is not affected by this parameter, just its resolution / quality is lowered.
@@ -428,11 +458,15 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a {@link Bitmap} object from a given file asynchronously, at its original dimensions.
      * Downsample rate is auto-increased if bitmap rendering causes an {@link OutOfMemoryError}.
-     * <p/>
-     * <b>Permissions:</b> If file is outside app's own folders, this method requires the app using the library to use permission android.permissions.READ_EXTERNAL_STORAGE in order to work.
-     * If permission android.permissions.WRITE_EXTERNAL_STORAGE is granted, READ_EXTERNAL_STORAGE permission is also granted automatically.
+     * </p>
+     * <p>
+     * <b>Permissions:</b> If file is outside app's own folders, this method requires the app using the library to
+     * get permission android.permissions.READ_EXTERNAL_STORAGE in order to work. If permission
+     * android.permissions.WRITE_EXTERNAL_STORAGE is granted, READ_EXTERNAL_STORAGE permission is also granted automatically.
+     * </p>
      *
      * @param path                 Physical path of File in the device storage.
      * @param onBitmapRendered     Overwrite this callback to retrieve {@link Bitmap} object rendered once it's ready and perform any other actions needed.
@@ -445,9 +479,10 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given url, using the specified measures to calculate image downsample if needed.
-     * <p/>
-     * <b>Permissions:</b> This method requires the app using the library to use permission android.permissions.INTERNET in order to work.
+     * </p>
+     * <p><b>Permissions:</b> This method requires the app using the library to use permission android.permissions.INTERNET in order to work.</p>
      *
      * @param url                  Image resource URL (e.g. http://www.website.com/image.png)
      * @param reqWidth             Required width of the view where the Bitmap should fit. This parameter doesn't affect image aspect ratio, it's only used to calculate the inSampleSize of the image in case a downsample is required.
@@ -462,9 +497,10 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a sampled {@link Bitmap} object from a given url, using the inSampleSize specified.
-     * <p/>
-     * <b>Permissions:</b> This method requires the app using the library to use permission android.permissions.INTERNET in order to work.
+     * </p>
+     * <p><b>Permissions:</b> This method requires the app using the library to use permission android.permissions.INTERNET in order to work.</p>
      *
      * @param url                  Image resource URL (e.g. http://www.website.com/image.png)
      * @param inSampleSize         Determines how many times image resolution is divided to lower memory usage. Image aspect ratio is not affected by this parameter, just its resolution / quality is lowered.
@@ -478,9 +514,10 @@ public final class EpicBitmapRenderer {
     }
 
     /**
+     * <p>
      * Decodes a {@link Bitmap} object from a given url, at its original dimensions.
-     * <p/>
-     * <b>Permissions:</b> This method requires the app using the library to use permission android.permissions.INTERNET in order to work.
+     * </p>
+     * <p><b>Permissions:</b> This method requires the app using the library to use permission android.permissions.INTERNET in order to work.</p>
      *
      * @param url                  Image resource URL (e.g. http://www.website.com/image.png)
      * @param onBitmapRendered     Overwrite this callback to retrieve {@link Bitmap} object rendered once it's ready and perform any other actions needed.
@@ -498,11 +535,11 @@ public final class EpicBitmapRenderer {
     //TODO: Find a way to initialize disk cache automatically (needs application context), without asking the user to call a method (initDiskCache) passing Context as parameter. Context is just used to retrieve app's cache dir
 
     /**
-     * Initializes disk caches.
-     * <p/>
-     * <b>Important Note:</b> Until an alternative is found, this method must be called (Just once for whole app life cycle, and in any time) before using any render method, other way, {@link Bitmap} objects
-     * rendered won't be stored on disk cache, just in memory cache.
-     * <p/>
+     * <p>Initializes disk caches.</p>
+     * <p>
+     * <b>Important Note:</b> Until an alternative is found, this method must be called (Just once for whole app life cycle, and in any time)
+     * before using any render method, other way, {@link Bitmap} objects rendered won't be stored on disk cache, just in memory cache.
+     * </p>
      *
      * @param context {@link Context} from where lib is being called. This is used to get application's cache dir for disk cache.
      */
@@ -520,7 +557,7 @@ public final class EpicBitmapRenderer {
      * @param reqWidth  Required width of the view where the Bitmap should fit.
      * @param reqHeight Required height of the view where the Bitmap should fit.
      * @return int representing inSampleSize, a.k.a. the number of times image resolution is divided to lower memory usage.
-     * @see <a href="https://developer.android.com/training/displaying-bitmaps/load-bitmap.html#load-bitmap">Google conventions for calculate inSampleSize</a>.
+     * @see <a href="https://developer.android.com/training/displaying-bitmaps/load-bitmap.html#load-bitmap">Google conventions for calculate inSampleSize.</a>
      */
     public static int calculateInSampleSize(
             BitmapFactory.Options options, int reqWidth, int reqHeight) {

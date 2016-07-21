@@ -31,9 +31,7 @@ import com.isaacrf.epicbitmaprenderer.listeners.OnBitmapRenderFailed;
 import com.isaacrf.epicbitmaprenderer.listeners.OnBitmapRendered;
 
 /**
- * AsyncTask to decode a Bitmap from resource given its resource ID and desired dimensions
- * <p/>
- * Created by Isaac on 19/05/2016.
+ * AsyncTask to decode a Bitmap from resource given its resource ID and desired dimensions.
  */
 public class AsyncDecodeResMeasured extends AsyncTask<Void, Void, Bitmap> {
     //region Fields
@@ -53,7 +51,7 @@ public class AsyncDecodeResMeasured extends AsyncTask<Void, Void, Bitmap> {
     //region Constructors
 
     /**
-     * All parameters constructor
+     * All parameters constructor.
      *
      * @param res                  Resources package. You can get default resources package using {@link Activity#getResources()} inside an activity or {@link Context#getResources()} outside if a {@link Context} is available.
      * @param resId                App resource id. Could be either the pure integer value, or the Android resource name (R.drawable.img_name).
@@ -78,7 +76,7 @@ public class AsyncDecodeResMeasured extends AsyncTask<Void, Void, Bitmap> {
     }
 
     /**
-     * Basic constructor with just the required parameters
+     * Basic constructor with just the required parameters.
      *
      * @param res              Resources package. You can get default resources package using {@link Activity#getResources()} inside an activity or {@link Context#getResources()} outside if a {@link Context} is available.
      * @param resId            App resource id. Could be either the pure integer value, or the Android resource name (R.drawable.img_name).

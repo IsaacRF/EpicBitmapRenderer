@@ -35,9 +35,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 /**
- * AsyncTask to decode a Bitmap from a url given its desired dimensions
- * <p/>
- * Created by Isaac on 19/05/2016.
+ * AsyncTask to decode a Bitmap from a url given its desired dimensions.
  */
 public class AsyncDecodeUrlMeasured extends AsyncTask<Void, Void, Bitmap> {
     //region Fields
@@ -56,7 +54,7 @@ public class AsyncDecodeUrlMeasured extends AsyncTask<Void, Void, Bitmap> {
     //region Constructors
 
     /**
-     * All parameters constructor
+     * All parameters constructor.
      *
      * @param url                  Image resource URL (e.g. http://www.website.com/image.png)
      * @param reqWidth             Required width of the view where the Bitmap should fit. This parameter doesn't affect image aspect ratio, it's only used to calculate the inSampleSize of the image in case a downsample is required.
@@ -78,7 +76,7 @@ public class AsyncDecodeUrlMeasured extends AsyncTask<Void, Void, Bitmap> {
     }
 
     /**
-     * Basic constructor with just the required parameters
+     * Basic constructor with just the required parameters.
      *
      * @param url              Image resource URL (e.g. http://www.website.com/image.png)
      * @param reqWidth         Required width of the view where the Bitmap should fit. This parameter doesn't affect image aspect ratio, it's only used to calculate the inSampleSize of the image in case a downsample is required.

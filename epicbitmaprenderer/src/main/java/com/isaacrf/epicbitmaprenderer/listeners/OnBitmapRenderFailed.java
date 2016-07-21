@@ -20,12 +20,11 @@ package com.isaacrf.epicbitmaprenderer.listeners;
 
 /**
  * Listener to get a callback when Bitmap fails to render
- *
- * Created by Isaac on 18/05/2016.
  */
 public interface OnBitmapRenderFailed {
     /**
      * Callback to be invoked when bitmap fails to render
+     *
      * @param e {@link Exception} that caused the render fail
      */
     void onBitmapRenderFailed(Exception e);
