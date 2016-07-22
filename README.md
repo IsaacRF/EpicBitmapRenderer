@@ -98,7 +98,7 @@ EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher
         });
 ```
 
-Almost every decoding method have an alternative synchronous method (same arguments without callbacks) in case you need them, but it's not recommended as they run on UI thread and can freeze the app. Here is the same example from before, calling the synchronous method:
+Almost every decoding method has an alternate, overloaded synchronous method (same arguments without callbacks) in case you need them, but it's not recommended as they run on UI thread and can freeze the app. Here is the same example as before, calling the synchronous method:
 
 ```java
 ((ImageView) findViewById(R.id.imgSampleDecodeResource)).setImageBitmap(EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher, 200, 200);
