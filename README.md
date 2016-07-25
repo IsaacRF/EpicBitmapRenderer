@@ -22,7 +22,7 @@ This Android Bitmap decoder library follows the Google conventions for displayin
 
 <h2>How to use Epic Bitmap Renderer in your app</h2>
 
-The Android Studio Project contains a "samples" app module with a single Main Activity, that can be installed on an Android device or virtual machine to test library functions. It contains all the code required for importing, initializing and using the library working on your own app, as well as examples of library decoding methods calls.
+The Android Studio Project contains a "samples" app module with a single Main Activity, that can be installed on an Android device or virtual machine to test library functions. It contains all the code required for importing, initializing and calling the library on your own app, as well as examples of library decoding methods calls.
 
 <h3>1.- Importing library</h3>
 <p>First of all, you need to import EpicBitmapRenderer library into your proyect, available on Bintray JCenter and Maven Central repositories. There are several ways to do this depending on your IDE and your project configuration</p>
@@ -50,6 +50,7 @@ Ivy:
 ```
 
 You can also manually download library .aar file (.jar + Android dependencies) and javadocs from [EpicBitmapRenderer JCenter repository][1], add files to your project libs folder, and import the library using your IDE or Gradle, adding the following to your module's build.gradle script:
+
 ```groovy
 repositories {
     flatDir {
@@ -67,7 +68,7 @@ dependencies {
 <h3>2.- Initializing library</h3>
 <p>Once EpicBitmapRenderer is succesfully imported into your project, you will have access to EpicBitmapRenderer class and its statics methods to decode and render Bitmaps on your app</p>
 
-<p>EpicBitmapLibrary uses a dual memory and disk cache to improve image decoding and rendering process, memory cache is automatically initialized when library is loaded, but disk cache requires context to know your app's own cache folder and create it, so it needs to be manually initialized. <b>(I'm looking for ways to avoid this step and automatize the process, see the following "Contributing" section for more info)</b></p>
+<p>EpicBitmapLibrary uses a dual memory and disk cache to improve image decoding and rendering process, memory cache is automatically initialized when library is loaded, but disk cache requires context to know your app's own cache folder and create it, so it needs to be manually initialized. <b>(I'm looking for ways to avoid this step and automatize the process, see "Known issues / todo features list" into "Contributing" section for more info)</b></p>
 
 <p>So the first step is to initialize disk cache, calling this method on your code (You have to call this method just once in the entire app life cycle). If disk cache is not initialized, <b>the library will continue to function properly and storing decoded images on memory cache.</b></p>
 
@@ -76,7 +77,9 @@ dependencies {
 EpicBitmapRenderer.initDiskCache(this);
 ```
 
-<h3>3.- Calling library</h3>
+<p>To decode Bitmaps from files or URLs, your app may need to request special permissions</p>
+
+<h3>3.- Decoding Bitmaps</h3>
 <p>EpicBitmapRenderer is a static class containing static methods, so you don't need to instantiate the library to use it. Here is one example, extracted from samples app, of calling a method to decode a Bitmap from a resource of your app and show it on an ImageView, or handle the decoding error if one occurs.</p>
 
 ```java
@@ -98,13 +101,35 @@ EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher
         });
 ```
 
+That's it. EpicBitmapRenderer decodes the Bitmap asynchronously in a worker thread, stores it in memory and disk cache, and returns decoded Bitmap at the end of the process on the onBitmapRendered(Bitmap) callback if successful. Further calls to render methods pointing to the same resource, will obtain the decoded Bitmap from memory or disk cache if available, instead of rendering the resource again, saving memory usage.
+
 Almost every decoding method has an alternate, overloaded synchronous method (same arguments without callbacks) in case you need them, but it's not recommended as they run on UI thread and can freeze the app. Here is the same example as before, calling the synchronous method:
 
 ```java
-((ImageView) findViewById(R.id.imgSampleDecodeResource)).setImageBitmap(EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher, 200, 200);
+Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher, 200, 200);
+((ImageView) findViewById(R.id.imgSampleDecodeResource)).setImageBitmap(decodedBitmap);
 ```
 
 <h2>Contributing</h2>
-<p>In process...</p>
+<p>You can help improve EpicBmRenderer in many ways, some of which are:</p>
+<ul>
+    <li>Adding new image decode methods from different kind of sources to different kind of image formats</li>
+    <li>Improving cache and other core elements functionality</li>
+    <li>Reporting and / or fixing bugs, issues, etc.</li>
+</ul>
+
+<p>Just fork the project, modify, and make a pull request to master Branch. Please, follow library structure when contributing and try to keep the same coding style as the rest of the code.</p>
+
+<p>If you add a new decoding method, please add an example of usage in samples app module as well, and update the documentation to match any changes you make.</p>
+
+<h3>1.- Project Structure</h3>
+In process...
+
+<h3>2.- Known issues / todo features list</h3>
+<ul>
+    <li>[ ! ] Find a way to initialize disk cache automatically on EpicBitmapCache (needs application context), without asking the user to call a method (initDiskCache) passing Context as parameter. Context is just used to retrieve app's cache dir</li>
+    <li>[ ! ] Allow to clear cache or force rendering from source skipping cache check task</li>
+    <li>[~] Allow to enable / disable automatic image caching</li>
+</ul>
 
 [1]: https://bintray.com/isaacrf/maven/EpicBitmapRenderer/1.0
