@@ -1,4 +1,8 @@
 # EpicBitmapRenderer
+
+[ ![Download](https://api.bintray.com/packages/isaacrf/maven/EpicBitmapRenderer/images/download.svg) ](https://bintray.com/isaacrf/maven/EpicBitmapRenderer/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer)
+
 <p>
 Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.
 </p>
