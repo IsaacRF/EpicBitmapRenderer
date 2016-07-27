@@ -117,8 +117,8 @@ EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher
             public void onBitmapRenderFailed(Exception e) {
                 //Take actions if Bitmap fails to render
                 Toast.makeText(MainActivity.this, 
-                "Failed to load Bitmap from Resource: " + e.getMessage(), 
-                Toast.LENGTH_SHORT).show();
+                        "Failed to load Bitmap from Resource: " + e.getMessage(), 
+                        Toast.LENGTH_SHORT).show();
             }
         });
 ```
