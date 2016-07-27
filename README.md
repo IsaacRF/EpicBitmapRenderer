@@ -76,7 +76,8 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile(name:'epicbitmaprenderer-1.0', ext:'aar')       //Add .aar file to libs/ and use folder as repository
+    //Add .aar file to libs/ and use folder as repository
+    compile(name:'epicbitmaprenderer-1.0', ext:'aar')
 }
 ```
 
@@ -88,7 +89,9 @@ dependencies {
 <p>So the first step is initializing disk cache, calling this method in your code (You may only call this method ONCE in the entire app life cycle). If disk cache is not initialized, <b>the library will continue to function properly and will keep storing decoded images in memory cache.</b></p>
 
 ```java
-//Pass context as parameter. You can use "this" inside an Activity, or "ActivityName.this" in other levels 
+/* Pass context as parameter. You can use "this" inside 
+an Activity, or "ActivityName.this" in other levels 
+ */
 EpicBitmapRenderer.initDiskCache(this);
 ```
 
@@ -98,7 +101,9 @@ EpicBitmapRenderer.initDiskCache(this);
 <p>EpicBitmapRenderer is a static class containing only static methods, so you don't need to instantiate it to use the library. Here is an example, extracted from samples app, of calling a method to decode a Bitmap from a resource of your app, and then showing it on an ImageView, or handling the decoding error, if one occurs.</p>
 
 ```java
-//Sample 1: Decode Bitmap from Resource app icon, downsample if needed to fit in 200x200 ImageView,  (Async)
+/*Sample 1: Decode Bitmap from Resource app icon, downsample if needed 
+to fit in 200x200 ImageView,  (Async)
+ */
 EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher, 200, 200,
         new OnBitmapRendered() {
             @Override
@@ -111,7 +116,9 @@ EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher
             @Override
             public void onBitmapRenderFailed(Exception e) {
                 //Take actions if Bitmap fails to render
-                Toast.makeText(MainActivity.this, "Failed to load Bitmap from Resource: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, 
+                "Failed to load Bitmap from Resource: " + e.getMessage(), 
+                Toast.LENGTH_SHORT).show();
             }
         });
 ```
@@ -121,7 +128,8 @@ And that's it! EpicBitmapRenderer decodes the Bitmap asynchronously in a worker 
 Almost every decoding method has an alternate, overloaded synchronous method (same arguments without callbacks) in case you need them, but it's not recommended as they run on the UI thread and can freeze the app. Here is the same example as before, but calling the synchronous method:
 
 ```java
-Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(), R.mipmap.ic_launcher, 200, 200);
+Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(), 
+        R.mipmap.ic_launcher, 200, 200);
 ((ImageView) findViewById(R.id.imgSampleDecodeResource)).setImageBitmap(decodedBitmap);
 ```
 
