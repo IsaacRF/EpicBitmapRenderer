@@ -1,12 +1,12 @@
 # EpicBitmapRenderer
 
-[ ![Download](https://api.bintray.com/packages/isaacrf/maven/EpicBitmapRenderer/images/download.svg) ](https://bintray.com/isaacrf/maven/EpicBitmapRenderer/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/isaacrf/maven/EpicBitmapRenderer/images/download.svg) ](https://bintray.com/isaacrf/maven/epicbitmaprenderer/_latestVersion)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer)
 
 <p>
 Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.
 </p>
-![](http://isaacrf.com/libs/EpicBitmapRenderer/images/EpicBitmapRenderer-Icon.png)
+![](http://isaacrf.com/libs/epicbitmaprenderer/images/EpicBitmapRenderer-Icon.png)
 
 <h2>Epic Bitmap Renderer, the outOfMemoryError slayer</h2>
 <p>
@@ -33,9 +33,11 @@ Epic Bitmap Renderer offers Android developers the following features:
 
 <h2>How to use Epic Bitmap Renderer in your app</h2>
 
+You can access general [javadoc][jdoclink] to see project structure and documentation, or access directly to [EpicBitmapRenderer class javadoc][jdoclink2] to see all image decoding methods available, and how to call them.
+
 The Android Studio Project contains a "samples" app module with a single Main Activity, that can be installed on an Android device or virtual machine to test library functions. It contains all the code required for importing, initializing and calling the library in your own app, as well as examples of library decoding method calls.
 
-![](http://isaacrf.com/libs/EpicBitmapRenderer/images/SamplesApp.png)
+![](http://isaacrf.com/libs/epicbitmaprenderer/images/SamplesApp.png)
 
 <h3>1.- Importing library</h3>
 <p>First of all, you need to import EpicBitmapRenderer library into your proyect. It is available on Bintray JCenter and Maven Central repositories. There are several ways to do this depending on your IDE and your project configuration.</p>
@@ -62,7 +64,7 @@ Ivy:
 </dependency>
 ```
 
-You can also manually download the library .aar file (.jar + Android dependencies) and javadocs from [EpicBitmapRenderer JCenter repository][1], add files to your project libs folder, and import the library using your IDE or Gradle, adding the following to your module's build.gradle script:
+You can also manually download the library .aar file (.jar + Android dependencies) and javadocs from [EpicBitmapRenderer JCenter repository][jcenterlink], add files to your project libs folder, and import the library using your IDE or Gradle, adding the following to your module's build.gradle script:
 
 ```groovy
 repositories {
@@ -136,7 +138,7 @@ Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(
 <p>If you add a new decoding method, please add an example of usage in samples app module as well, and update the documentation to match any changes you make.</p>
 
 <h3>1.- Project Structure</h3>
-![](http://isaacrf.com/libs/EpicBitmapRenderer/images/ProjectStructure.png)
+![](http://isaacrf.com/libs/epicbitmaprenderer/images/ProjectStructure.png)
 
 <p>EpicBitmapRenderer is an Android Studio project divided in 2 main modules:</p>
 <ul>
@@ -165,4 +167,6 @@ Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(
     <li>[~] Allow to enable / disable automatic image caching</li>
 </ul>
 
-[1]: https://bintray.com/isaacrf/maven/EpicBitmapRenderer/1.0
+[jcenterlink]: https://bintray.com/isaacrf/maven/EpicBitmapRenderer/1.0
+[jdoclink]: http://isaacrf.com/libs/epicbitmaprenderer/javadoc
+[jdoclink2]: http://isaacrf.com/libs/epicbitmaprenderer/javadoc/com/isaacrf/epicbitmaprenderer/core/EpicBitmapRenderer.html
