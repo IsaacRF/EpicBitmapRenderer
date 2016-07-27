@@ -3,44 +3,31 @@
 [ ![Download](https://api.bintray.com/packages/isaacrf/maven/EpicBitmapRenderer/images/download.svg) ](https://bintray.com/isaacrf/maven/epicbitmaprenderer/_latestVersion)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer)
 
-<p>
 Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.
-</p>
+
 ![EpicBitmapRenderer Icon](http://isaacrf.com/libs/epicbitmaprenderer/images/EpicBitmapRenderer-Icon.png)
 
-<h2>Epic Bitmap Renderer, the outOfMemoryError slayer</h2>
-<p>
+## Epic Bitmap Renderer, the outOfMemoryError slayer
 Have you ever had to face image decoding in an Android app? If you have, you have most definitely also faced the problem of having to repeat many tedious and time consuming tasks, each and every single time you have had to do so in a different app.
-</p>
-<p>
+
 Following Google conventions on displaying bitmaps efficiently
-(see <a href="https://developer.android.com/training/displaying-bitmaps/index.html?hl=es">Google guide</a> for more info), this Android Bitmap decoder library puts an end to these problems, automatizing most of these tedious tasks, and even others you didn't know you had to do!
-</p>
-<p>
+(see [Google guide][gbmpdisplayguidelink] for more info), this Android Bitmap decoder library puts an end to these problems, automatizing most of these tedious tasks, and even others you didn't know you had to do!
+
 Epic Bitmap Renderer offers Android developers the following features:
-</p>
-<ul>
-    <li>
-        <b>Exposes static asynchronous</b> (and synchronous too, just in case you need it) <b>methods</b> to decode Bitmap objects from different sources <b>outside the UI thread</b>, ensuring that your app runs smoothly.
-    </li>
-    <li>
-        <b>Image auto and manual downsampling.</b> This library keeps memory usage of your app low by loading images in just the scale and size you need, only specifying Image holder's size (Or a manual downsample rate). If the device is still unable to load image due to low memory available, render methods will automatically recalculate image downsample for it to successfully fit in the device's memory, <b>avoiding that annoying OutOfMemoryError.</b>
-    </li>
-    <li>
-        <b>Image auto caching.</b> Rendering methods automatically save rendered Bitmaps in memory and disk caches using dual cache EpicBitmapCache. If an image is previously rendered, next time it will be extracted from cache if available, and it will be used instead of re-rendering Bitmap from source again. This entire process is automatic (as render methods handle cache themselves) and saves a lot of memory consumption from heavy processes like rendering images from disk or the Internet.
-    </li>
-</ul>
 
-<h2>How to use Epic Bitmap Renderer in your app</h2>
+* **Exposes static asynchronous** (and synchronous too, just in case you need it) **methods** to decode Bitmap objects from different sources **outside the UI thread**, ensuring that your app runs smoothly.
+* **Image auto and manual downsampling.** This library keeps memory usage of your app low by loading images in just the scale and size you need, only specifying Image holder's size (Or a manual downsample rate). If the device is still unable to load image due to low memory available, render methods will automatically recalculate image downsample for it to successfully fit in the device's memory, **avoiding that annoying OutOfMemoryError.**
+* **Image auto caching.** Rendering methods automatically save rendered Bitmaps in memory and disk caches using dual cache EpicBitmapCache. If an image is previously rendered, next time it will be extracted from cache if available, and it will be used instead of re-rendering Bitmap from source again. This entire process is automatic (as render methods handle cache themselves) and saves a lot of memory consumption from heavy processes like rendering images from disk or the Internet.
 
+## How to use Epic Bitmap Renderer in your app
 You can access general [javadoc][jdoclink] to see project structure and documentation, or access directly to [EpicBitmapRenderer class javadoc][jdoclink2] to see all image decoding methods available, and how to call them.
 
 The Android Studio Project contains a "samples" app module with a single Main Activity, that can be installed on an Android device or virtual machine to test library functions. It contains all the code required for importing, initializing and calling the library in your own app, as well as examples of library decoding method calls.
 
 ![Samples app screen capture](http://isaacrf.com/libs/epicbitmaprenderer/images/SamplesApp.png)
 
-<h3>1.- Importing library</h3>
-<p>First of all, you need to import EpicBitmapRenderer library into your proyect. It is available on Bintray JCenter and Maven Central repositories. There are several ways to do this depending on your IDE and your project configuration.</p>
+### 1.- Importing library
+First of all, you need to import EpicBitmapRenderer library into your proyect. It is available on Bintray JCenter and Maven Central repositories. There are several ways to do this depending on your IDE and your project configuration.
 
 Gradle:
 ```groovy
@@ -81,12 +68,12 @@ dependencies {
 }
 ```
 
-<h3>2.- Initializing the library</h3>
-<p>Once EpicBitmapRenderer is succesfully imported into your project, you will have access to the EpicBitmapRenderer class and its static methods to decode and render Bitmaps in your app.</p>
+### 2.- Initializing the library
+Once EpicBitmapRenderer is succesfully imported into your project, you will have access to the EpicBitmapRenderer class and its static methods to decode and render Bitmaps in your app.
 
-<p>EpicBitmapLibrary uses a dual memory and disk cache to improve image decoding and rendering processes. Memory cache is automatically initialized when the library is loaded. However, disk cache requires a context to know what your app's own cache folder is and create it, so it needs to be manually initialized. <b>(I'm still looking for ways to avoid this step and automatize the process, see "Known issues / todo features list" in the "Contributing" section for more info).</b></p>
+EpicBitmapLibrary uses a dual memory and disk cache to improve image decoding and rendering processes. Memory cache is automatically initialized when the library is loaded. However, disk cache requires a context to know what your app's own cache folder is and create it, so it needs to be manually initialized. **(I'm still looking for ways to avoid this step and automatize the process, see "Known issues / todo features list" in the "Contributing" section for more info).**
 
-<p>So the first step is initializing disk cache, calling this method in your code (You may only call this method ONCE in the entire app life cycle). If disk cache is not initialized, <b>the library will continue to function properly and will keep storing decoded images in memory cache.</b></p>
+So the first step is initializing disk cache, calling this method in your code (You may only call this method ONCE in the entire app life cycle). If disk cache is not initialized, **the library will continue to function properly and will keep storing decoded images in memory cache.**
 
 ```java
 /* Pass context as parameter. You can use "this" inside 
@@ -95,10 +82,10 @@ an Activity, or "ActivityName.this" in other levels
 EpicBitmapRenderer.initDiskCache(this);
 ```
 
-<p>To decode Bitmaps from files or URLs, your app may need to request special permissions</p>
+To decode Bitmaps from files or URLs, your app may need to request special permissions.
 
-<h3>3.- Decoding Bitmaps</h3>
-<p>EpicBitmapRenderer is a static class containing only static methods, so you don't need to instantiate it to use the library. Here is an example, extracted from samples app, of calling a method to decode a Bitmap from a resource of your app, and then showing it on an ImageView, or handling the decoding error, if one occurs.</p>
+### 3.- Decoding Bitmaps
+EpicBitmapRenderer is a static class containing only static methods, so you don't need to instantiate it to use the library. Here is an example, extracted from samples app, of calling a method to decode a Bitmap from a resource of your app, and then showing it on an ImageView, or handling the decoding error, if one occurs.
 
 ```java
 /*Sample 1: Decode Bitmap from Resource app icon, downsample if needed 
@@ -133,48 +120,46 @@ Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(
 ((ImageView) findViewById(R.id.imgSampleDecodeResource)).setImageBitmap(decodedBitmap);
 ```
 
-<h2>Contributing</h2>
-<p>You can help improve EpicBitmapRenderer in many ways, some of which are:</p>
-<ul>
-    <li>Adding new image decoding methods, from different kinds of sources, to different image formats.</li>
-    <li>Improving cache and other core elements' functionality.</li>
-    <li>Reporting and/or fixing bugs, issues, etc.</li>
-</ul>
+## Contributing
+You can help improve EpicBitmapRenderer in many ways, some of which are:
 
-<p>Just fork the project, modify what you want, and make a pull request to master Branch. Please, follow library structure and coding style when contributing, and make sure that your code compiles.</p>
+* Adding new image decoding methods, from different kinds of sources, to different image formats.
+* Improving cache and other core elements' functionality.
+* Reporting and/or fixing bugs, issues, etc.
 
-<p>If you add a new decoding method, please add an example of usage in samples app module as well, and update the documentation to match any changes you make.</p>
+Just fork the project, modify what you want, and make a pull request to master Branch. Please, follow library structure and coding style when contributing, and make sure that your code compiles.
 
-<h3>1.- Project Structure</h3>
+If you add a new decoding method, please add an example of usage in samples app module as well, and update the documentation to match any changes you make.
+
+### 1.- Project Structure
 ![Project Structure from Android Studio](http://isaacrf.com/libs/epicbitmaprenderer/images/ProjectStructure.png)
 
-<p>EpicBitmapRenderer is an Android Studio project divided in 2 main modules:</p>
-<ul>
-    <li>epicbitmaprenderer</li>
-    <li>samples</li>
-</ul>
+EpicBitmapRenderer is an Android Studio project divided in 2 main modules:
 
-<h4>1.1.- epicbitmaprenderer module</h4>
-<p>epicbitmaprenderer is an Android Library module containing all the library code. This module is divided into the following packages:</p>
-<ul>
-    <li><b>core:</b> This package stores all the core code of the library divided into 2 classes, EpicBitmapRenderer, containing all Bitmap decoding and rendering methods, and EpicBitmapCache, a dual cache class to handle automatic image caching on memory and disk.</li>
-    <li><b>asynctasks:</b> Different asynctasks used by core package, mainly by EpicBitmapRenderer to decode Bitmaps asynchronously.</li>
-    <li><b>listeners:</b> Interfaces for callback definitions. Used to expose a template to override callbacks and handle decoding results.</li>
-    <li><b>utils:</b> Helper classes used for different tasks, such as handling disk cache and performing IO reading/writing operations.</li>
-</ul>
+* epicbitmaprenderer
+* samples
 
-<h4>1.2.- samples module</h4>
-<p>samples is an Android app module containing a single Main Activity with different Bitmap decoding examples. This app can be deployed on an Android device or virtual machine to test library functionalities.</p>
 
-<p>When adding new decoding methods from new sources or to new formats, this activity must be updated with examples of method usage.</p>
+#### 1.1.- epicbitmaprenderer module
+epicbitmaprenderer is an Android Library module containing all the library code. This module is divided into the following packages:
 
-<h3>2.- Known issues / todo features list</h3>
-<ul>
-    <li>[ ! ] Find a way to initialize disk cache automatically on EpicBitmapCache (needs application context), without asking the user to call a method (initDiskCache) passing Context as parameter. Context is just used to retrieve app's cache dir</li>
-    <li>[ ! ] Allow to clear cache or force rendering from source skipping cache check task</li>
-    <li>[~] Allow to enable / disable automatic image caching</li>
-</ul>
+* **core:** This package stores all the core code of the library divided into 2 classes, EpicBitmapRenderer, containing all Bitmap decoding and rendering methods, and EpicBitmapCache, a dual cache class to handle automatic image caching on memory and disk.
+* **asynctasks:** Different asynctasks used by core package, mainly by EpicBitmapRenderer to decode Bitmaps asynchronously.
+* **listeners:** Interfaces for callback definitions. Used to expose a template to override callbacks and handle decoding results.
+* **utils:** Helper classes used for different tasks, such as handling disk cache and performing IO reading/writing operations.
+    
+
+#### 1.2.- samples module
+samples is an Android app module containing a single Main Activity with different Bitmap decoding examples. This app can be deployed on an Android device or virtual machine to test library functionalities.
+
+When adding new decoding methods from new sources or to new formats, this activity must be updated with examples of method usage.
+
+### 2.- Known issues / todo features list
+- [ ] Find a way to initialize disk cache automatically on EpicBitmapCache (needs application context), without asking the user to call a method (initDiskCache) passing Context as parameter. Context is just used to retrieve app's cache dir
+- [ ] Allow to clear cache or force rendering from source skipping cache check task
+- [ ] Allow to enable / disable automatic image caching
 
 [jcenterlink]: https://bintray.com/isaacrf/maven/EpicBitmapRenderer/1.0
 [jdoclink]: http://isaacrf.com/libs/epicbitmaprenderer/javadoc
 [jdoclink2]: http://isaacrf.com/libs/epicbitmaprenderer/javadoc/com/isaacrf/epicbitmaprenderer/core/EpicBitmapRenderer.html
+[gbmpdisplayguidelink]: https://developer.android.com/training/displaying-bitmaps/index.html?hl=es
