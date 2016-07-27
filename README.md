@@ -6,7 +6,7 @@
 <p>
 Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.
 </p>
-![](http://isaacrf.com/libs/epicbitmaprenderer/images/EpicBitmapRenderer-Icon.png)
+![EpicBitmapRenderer Icon](http://isaacrf.com/libs/epicbitmaprenderer/images/EpicBitmapRenderer-Icon.png)
 
 <h2>Epic Bitmap Renderer, the outOfMemoryError slayer</h2>
 <p>
@@ -37,7 +37,7 @@ You can access general [javadoc][jdoclink] to see project structure and document
 
 The Android Studio Project contains a "samples" app module with a single Main Activity, that can be installed on an Android device or virtual machine to test library functions. It contains all the code required for importing, initializing and calling the library in your own app, as well as examples of library decoding method calls.
 
-![](http://isaacrf.com/libs/epicbitmaprenderer/images/SamplesApp.png)
+![Samples app screen capture](http://isaacrf.com/libs/epicbitmaprenderer/images/SamplesApp.png)
 
 <h3>1.- Importing library</h3>
 <p>First of all, you need to import EpicBitmapRenderer library into your proyect. It is available on Bintray JCenter and Maven Central repositories. There are several ways to do this depending on your IDE and your project configuration.</p>
@@ -146,7 +146,7 @@ Bitmap decodedBitmap = EpicBitmapRenderer.decodeBitmapFromResource(getResources(
 <p>If you add a new decoding method, please add an example of usage in samples app module as well, and update the documentation to match any changes you make.</p>
 
 <h3>1.- Project Structure</h3>
-![](http://isaacrf.com/libs/epicbitmaprenderer/images/ProjectStructure.png)
+![Project Structure from Android Studio](http://isaacrf.com/libs/epicbitmaprenderer/images/ProjectStructure.png)
 
 <p>EpicBitmapRenderer is an Android Studio project divided in 2 main modules:</p>
 <ul>
