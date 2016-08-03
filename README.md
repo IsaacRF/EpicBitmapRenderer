@@ -160,6 +160,6 @@ When adding new decoding methods from new sources or to new formats, this activi
 - [ ] Allow to enable / disable automatic image caching
 
 [jcenterlink]: https://bintray.com/isaacrf/maven/EpicBitmapRenderer/1.0
-[jdoclink]: http://isaacrf.com/libs/epicbitmaprenderer/javadoc
-[jdoclink2]: http://isaacrf.com/libs/epicbitmaprenderer/javadoc/com/isaacrf/epicbitmaprenderer/core/EpicBitmapRenderer.html
+[jdoclink]: http://epicbitmaprenderer.isaacrf.com/javadoc/
+[jdoclink2]: http://epicbitmaprenderer.isaacrf.com/javadoc/com/isaacrf/epicbitmaprenderer/core/EpicBitmapRenderer.html
 [gbmpdisplayguidelink]: https://developer.android.com/training/displaying-bitmaps/index.html?hl=es
