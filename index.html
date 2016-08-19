@@ -1,219 +1,263 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>EpicBitmapRenderer by IsaacRF</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">EpicBitmapRenderer</h1>
-      <h2 class="project-tagline">Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.</h2>
-      <a href="https://github.com/IsaacRF/EpicBitmapRenderer" class="btn">View on GitHub</a>
-      <a href="https://github.com/IsaacRF/EpicBitmapRenderer/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/IsaacRF/EpicBitmapRenderer/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>EpicBitmapRenderer - Android library for bitmap decoding - </title>
+		<meta name="Title" content="Android library for bitmap decoding - EpicBitmapRenderer">
+		<meta name="Description" content="Epic Bitmap Renderer is a free, open source Android library. Show images from any source, including URLs, with auto cache and image downsample.">
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto' >
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' >		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">		
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen">
+		<script defer type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script defer type="text/javascript" src="js/scripts.js"></script>
+		<!-- GitHub fork ribbon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" >
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" >
+		<![endif]-->
+		<!-- GitHub Buttons -->
+		<script async defer type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+		<!-- Code highlight -->
+		<link rel="stylesheet" type="text/css" href="https://highlightjs.org/static/demo/styles/solarized-dark.css" media="screen">
+		<script type="text/javascript" src="https://highlightjs.org/static/highlight.pack.js"></script>
+		<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<a class="github-fork-ribbon right-top" href="https://github.com/IsaacRF/EpicBitmapRenderer/fork" title="Fork me on GitHub">Fork me on GitHub</a>
+		
+		<header class="page-header">
+			<h1 class="project-name">EpicBitmapRenderer, the Android bitmap decoding library</h1>
+			<img src="http://isaacrf.com/libs/epicbitmaprenderer/images/EpicBitmapRenderer-Icon.png" alt="EpicBitmapRenderer, bitmap rendering library for Android developers">
+			<h2 class="project-tagline">Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.</h2>
 
-    <section class="main-content">
-      <h1>
-<a id="epicbitmaprenderer" class="anchor" href="#epicbitmaprenderer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EpicBitmapRenderer</h1>
+			<a href="https://github.com/IsaacRF/EpicBitmapRenderer" class="btn">View on GitHub</a>
+			<a href="https://github.com/IsaacRF/EpicBitmapRenderer/zipball/master" class="btn">Download .zip</a>
+			<a href="https://github.com/IsaacRF/EpicBitmapRenderer/tarball/master" class="btn">Download .tar.gz</a>
+		</header>
+		
+		<div class="menuPlaceholder"></div>
+		
+		<nav class="menu">
+			<div id="btnMenu"></div>
+			
+			<ul>
+				<li id="menuInfo"><a href="#info">About</a></li>
+				<li id="menuFeatures"><a href="#features">Features</a></li>
+				<li id="menuHow"><a href="#howtouse">How to use</a></li>
+				<li id="menuContribute"><a href="#contribute">Contribute</a></li>
+			</ul>
+		</nav>
 
-<p><a href="https://bintray.com/isaacrf/maven/epicbitmaprenderer/_latestVersion"> <img src="https://api.bintray.com/packages/isaacrf/maven/EpicBitmapRenderer/images/download.svg" alt="Download"> </a>
-<a href="https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer"><img src="https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer/badge.svg" alt="Maven Central"></a></p>
+		<section class="main-content">
+			<a id="info" class="anchor" href="#info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+			
+			<div id="content-info" class="content-a">
+				<div class="container">
+					<div class="row">
+						<div class="content-body">
+							<h2>Epic Bitmap Renderer, the outOfMemoryError slayer</h2>
 
-<p>Decode and render Bitmaps the epic and easy way, creating faster Android apps without extra effort.</p>
+							<p><a href="https://bintray.com/isaacrf/maven/epicbitmaprenderer/_latestVersion"> <img src="https://api.bintray.com/packages/isaacrf/maven/EpicBitmapRenderer/images/download.svg" alt="Download EpicBitmapRenderer from Bintray"> </a>
+							<a href="https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer"><img src="https://maven-badges.herokuapp.com/maven-central/com.isaacrf.epicbitmaprenderer/epicbitmaprenderer/badge.svg" alt="Download EpicBitmapRenderer from Maven Central"></a></p>
 
-<p><img src="http://isaacrf.com/libs/epicbitmaprenderer/images/EpicBitmapRenderer-Icon.png" alt="EpicBitmapRenderer Icon"></p>
+							<p>Decoding and showing images can be a tedious process for an Android developer, full of repetitive tasks you must perform every single time you develop an app in order for it to have a nice performance and <strong>avoid those annoying outOfMemoryError.</strong></p>
 
-<h2>
-<a id="epic-bitmap-renderer-the-outofmemoryerror-slayer" class="anchor" href="#epic-bitmap-renderer-the-outofmemoryerror-slayer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Epic Bitmap Renderer, the outOfMemoryError slayer</h2>
-
-<p>Have you ever had to face image decoding in an Android app? If you have, you have most definitely also faced the problem of having to repeat many tedious and time consuming tasks, each and every single time you have had to do so in a different app.</p>
-
-<p>Following Google conventions on displaying bitmaps efficiently
-(see <a href="https://developer.android.com/training/displaying-bitmaps/index.html?hl=es">Google guide</a> for more info), this Android Bitmap decoder library puts an end to these problems, automatizing most of these tedious tasks, and even others you didn't know you had to do!</p>
-
-<p>Epic Bitmap Renderer offers Android developers the following features:</p>
-
-<ul>
-<li>
-<strong>Exposes static asynchronous</strong> (and synchronous too, just in case you need it) <strong>methods</strong> to decode Bitmap objects from different sources <strong>outside the UI thread</strong>, ensuring that your app runs smoothly.</li>
-<li>
-<strong>Image auto and manual downsampling.</strong> This library keeps memory usage of your app low by loading images in just the scale and size you need, only specifying Image holder's size (Or a manual downsample rate). If the device is still unable to load image due to low memory available, render methods will automatically recalculate image downsample for it to successfully fit in the device's memory, <strong>avoiding that annoying OutOfMemoryError.</strong>
-</li>
-<li>
-<strong>Image auto caching.</strong> Rendering methods automatically save rendered Bitmaps in memory and disk caches using dual cache EpicBitmapCache. If an image is previously rendered, next time it will be extracted from cache if available, and it will be used instead of re-rendering Bitmap from source again. This entire process is automatic (as render methods handle cache themselves) and saves a lot of memory consumption from heavy processes like rendering images from disk or the Internet.</li>
-</ul>
-
-<h2>
-<a id="how-to-use-epic-bitmap-renderer-in-your-app" class="anchor" href="#how-to-use-epic-bitmap-renderer-in-your-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use Epic Bitmap Renderer in your app</h2>
-
-<p>You can access general <a href="http://isaacrf.com/libs/epicbitmaprenderer/javadoc">javadoc</a> to see project structure and documentation, or access directly to <a href="http://isaacrf.com/libs/epicbitmaprenderer/javadoc/com/isaacrf/epicbitmaprenderer/core/EpicBitmapRenderer.html">EpicBitmapRenderer class javadoc</a> to see all image decoding methods available, and how to call them.</p>
-
-<p>The Android Studio Project contains a "samples" app module with a single Main Activity, that can be installed on an Android device or virtual machine to test library functions. It contains all the code required for importing, initializing and calling the library in your own app, as well as examples of library decoding method calls.</p>
-
-<p><img src="http://isaacrf.com/libs/epicbitmaprenderer/images/SamplesApp.png" alt="Samples app screen capture"></p>
-
-<h3>
-<a id="1--importing-library" class="anchor" href="#1--importing-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.- Importing library</h3>
-
-<p>First of all, you need to import EpicBitmapRenderer library into your proyect. It is available on Bintray JCenter and Maven Central repositories. There are several ways to do this depending on your IDE and your project configuration.</p>
-
-<p>Gradle:</p>
-
-<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.isaacrf.epicbitmaprenderer:epicbitmaprenderer:1.0<span class="pl-pds">'</span></span></pre></div>
-
-<p>Maven:</p>
-
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
-  &lt;<span class="pl-ent">groupId</span>&gt;com.isaacrf.epicbitmaprenderer&lt;/<span class="pl-ent">groupId</span>&gt;
-  &lt;<span class="pl-ent">artifactId</span>&gt;epicbitmaprenderer&lt;/<span class="pl-ent">artifactId</span>&gt;
-  &lt;<span class="pl-ent">version</span>&gt;1.0&lt;/<span class="pl-ent">version</span>&gt;
-  &lt;<span class="pl-ent">type</span>&gt;pom&lt;/<span class="pl-ent">type</span>&gt;
-&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
-
-<p>Ivy:</p>
-
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span> <span class="pl-e">org</span>=<span class="pl-s"><span class="pl-pds">'</span>com.isaacrf.epicbitmaprenderer<span class="pl-pds">'</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>epicbitmaprenderer<span class="pl-pds">'</span></span> <span class="pl-e">rev</span>=<span class="pl-s"><span class="pl-pds">'</span>1.0<span class="pl-pds">'</span></span>&gt;
-  &lt;<span class="pl-ent">artifact</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>$AID<span class="pl-pds">'</span></span> <span class="pl-e">ext</span>=<span class="pl-s"><span class="pl-pds">'</span>pom<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">artifact</span>&gt;
-&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
-
-<p>You can also manually download the library .aar file (.jar + Android dependencies) and javadocs from <a href="https://bintray.com/isaacrf/maven/EpicBitmapRenderer/1.0">EpicBitmapRenderer JCenter repository</a>, add files to your project libs folder, and import the library using your IDE or Gradle, adding the following to your module's build.gradle script:</p>
-
-<div class="highlight highlight-source-groovy"><pre>repositories {
-    flatDir {
-        dirs <span class="pl-s"><span class="pl-pds">'</span>libs<span class="pl-pds">'</span></span>
-    }
-}
-
-dependencies {
-    compile fileTree(<span class="pl-c1">dir</span>: <span class="pl-s"><span class="pl-pds">'</span>libs<span class="pl-pds">'</span></span>, <span class="pl-c1">include</span>: [<span class="pl-s"><span class="pl-pds">'</span>*.jar<span class="pl-pds">'</span></span>])
-    testCompile <span class="pl-s"><span class="pl-pds">'</span>junit:junit:4.12<span class="pl-pds">'</span></span>
-    <span class="pl-c">//Add .aar file to libs/ and use folder as repository</span>
-    compile(<span class="pl-c1">name</span>:<span class="pl-s"><span class="pl-pds">'</span>epicbitmaprenderer-1.0<span class="pl-pds">'</span></span>, <span class="pl-c1">ext</span>:<span class="pl-s"><span class="pl-pds">'</span>aar<span class="pl-pds">'</span></span>)
-}</pre></div>
-
-<h3>
-<a id="2--initializing-the-library" class="anchor" href="#2--initializing-the-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.- Initializing the library</h3>
-
-<p>Once EpicBitmapRenderer is succesfully imported into your project, you will have access to the EpicBitmapRenderer class and its static methods to decode and render Bitmaps in your app.</p>
-
-<p>EpicBitmapLibrary uses a dual memory and disk cache to improve image decoding and rendering processes. Memory cache is automatically initialized when the library is loaded. However, disk cache requires a context to know what your app's own cache folder is and create it, so it needs to be manually initialized. <strong>(I'm still looking for ways to avoid this step and automatize the process, see "Known issues / todo features list" in the "Contributing" section for more info).</strong></p>
-
-<p>So the first step is initializing disk cache, calling this method in your code (You may only call this method ONCE in the entire app life cycle). If disk cache is not initialized, <strong>the library will continue to function properly and will keep storing decoded images in memory cache.</strong></p>
-
-<div class="highlight highlight-source-java"><pre><span class="pl-c">/* Pass context as parameter. You can use "this" inside </span>
-<span class="pl-c">an Activity, or "ActivityName.this" in other levels </span>
-<span class="pl-c"> */</span>
-<span class="pl-smi">EpicBitmapRenderer</span><span class="pl-k">.</span>initDiskCache(<span class="pl-v">this</span>);</pre></div>
-
-<p>To decode Bitmaps from files or URLs, your app may need to request special permissions.</p>
-
-<h3>
-<a id="3--decoding-bitmaps" class="anchor" href="#3--decoding-bitmaps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.- Decoding Bitmaps</h3>
-
-<p>EpicBitmapRenderer is a static class containing only static methods, so you don't need to instantiate it to use the library. Here is an example, extracted from samples app, of calling a method to decode a Bitmap from a resource of your app, and then showing it on an ImageView, or handling the decoding error, if one occurs.</p>
-
-<div class="highlight highlight-source-java"><pre><span class="pl-c">/*Sample 1: Decode Bitmap from Resource app icon, downsample if needed </span>
-<span class="pl-c">to fit in 200x200 ImageView,  (Async)</span>
-<span class="pl-c"> */</span>
-<span class="pl-smi">EpicBitmapRenderer</span><span class="pl-k">.</span>decodeBitmapFromResource(getResources(), <span class="pl-smi">R</span><span class="pl-k">.</span>mipmap<span class="pl-k">.</span>ic_launcher, <span class="pl-c1">200</span>, <span class="pl-c1">200</span>,
-        <span class="pl-k">new</span> <span class="pl-smi">OnBitmapRendered</span>() {
-            <span class="pl-k">@Override</span>
-            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onBitmapRendered</span>(<span class="pl-smi">Bitmap</span> <span class="pl-v">bitmap</span>) {
-                <span class="pl-c">//Display rendered Bitmap when successfully decoded</span>
-                ((<span class="pl-smi">ImageView</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>imgSampleDecodeResource))<span class="pl-k">.</span>setImageBitmap(bitmap);
+							<p>Following Android development guidelines (see <a href="https://developer.android.com/training/displaying-bitmaps/index.html?hl=es">Displaying bitmaps efficiently on Android guide</a> for more info), <strong>this Open Source, 100% free Android Bitmap Decoder library</strong> puts an end to these problems, automatizing most of these annoying tasks, and even others you didn't know you had to do!</p>
+						</div>
+						
+						<div class="content-image">
+							<img src="img/samplesApp.png" alt="EpicBitmapRenderer helps Android developers to avoid outOfMemoryErrors">
+						</div>
+						
+						<span class="after"></span>						
+					</div>
+				</div>
+			</div>
+			
+			<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+			
+			<div id="content-features" class="content-b-2">
+				<div class="container">
+					<h2>Features</h2>
+					
+					<div class="row">
+						<div class="content-image">
+							<img src="img/ic_free.png" alt="EpicBitmapRenderer is a free, open source Android library">
+						</div>
+						
+						<div class="content-body">
+							<h3>Open Source and 100% free</h3>
+							<p>Epic Bitmap Renderer is a <strong>free, open source Android library</strong> protected by <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>, which means that you can use it in your personal and commercial projects, free of charge, and even modify it to fit your needs, as long as you share and respect the license and original attributions.</p>
+						</div>
+						
+						<span class="after"></span>						
+					</div>
+					
+					<div class="row">
+						<div class="content-image">
+							<img src="img/ic_decode.png" alt="EpicBitmapRenderer can decode and display images from URLs and virtually any source">
+						</div>
+						
+						<div class="content-body">
+							<h3>Show images from virtually any source</h3>
+							<p>Decode and show images from <strong>URLs, app resources, device files</strong>, etc. This library can render and display images on your Android app from practically any source. If the render method you are looking for doesn't exist yet, you can create it by yourself, as this library is Open Source, or make a feature request on <a href="https://github.com/IsaacRF/EpicBitmapRenderer/issues" target="_blank">Project's GitHub Issue Tracker.</a></p>
+						</div>
+						
+						<span class="after"></span>						
+					</div>
+					
+					<div class="row">						
+						<div class="content-image">
+							<img src="img/ic_async.png" alt="EpicBitmapRenderer works async, avoiding ANRs">
+						</div>
+						
+						<div class="content-body">							
+							<h3>Async image decoding, 0 freezes</h3>
+							<p><strong>This library works outside the UI thread</strong>, ensuring that your app runs smoothly and avoiding ANR ("Application Not Responding") dialogs. Just call the desired decoding method, and handle the resulting image once the process is done.</p>
+						</div>
+						
+						<span class="after"></span>						
+					</div>
+					
+					<div class="row">						
+						<div class="content-image">
+							<img src="img/ic_resize.png" alt="EpicBitmapRenderer auto caches and downsamples decoded images">
+						</div>
+						
+						<div class="content-body">							
+							<h3>Auto cache and image downsample</h3>
+							<p>Android doesn't auto scales or downsamples images in order to save memory, neither it caches them by default, so the Android developer must handle these tasks manually in order to avoid outOfMemoryErrors and slowed down apps.</p>
+							<p>Epic Bitmap Renderer auto handles all this annoying tasks every time you decode an image, speeding up further decodes of the same resource and decoding the image downsampled at the required viewport's size, saving memory and letting you focus on the important things of your Android app development.</p>
+						</div>
+						
+						<span class="after"></span>						
+					</div>
+				</div>
+			</div>
+			
+			<a id="howtouse" class="anchor" href="#howtouse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+			
+			<div id="content-howtouse" class="content-a">			
+				<div class="container">
+					<div class="row">
+						<div class="content-body">
+							<h2>Using the library</h2>
+							<p>Epic Bitmap Renderer exposes static methods and overridable callbacks to handle decoded image and errors once decoding process is completed.</p>
+							<p>The library is available on JCenter and Maven Central, so you just have to add the dependency to use it.</p>
+							<p>Here is a bunch of useful links to learn how to use the library in your project:</p>
+							<ul>
+								<li><a href="https://github.com/IsaacRF/EpicBitmapRenderer/blob/master/README.md#how-to-use-epic-bitmap-renderer-in-your-app" target="_blank">Import and call library</a></li>
+								<li><a href="http://epicbitmaprenderer.isaacrf.com/javadoc" target="_blank">Javadoc</a></li>
+								<li><a href="http://epicbitmaprenderer.isaacrf.com/javadoc/com/isaacrf/epicbitmaprenderer/core/EpicBitmapRenderer.html" target="_blank">Javadoc: Decoding methods</a></li>
+							</ul>
+						</div>
+						
+						<div class="content-code">
+							<pre>
+								<code>
+//Add this on your gradle dependencies
+compile 'com.isaacrf.epicbitmaprenderer:epicbitmaprenderer:1.0'
+								
+/* Sample 1: Decode Bitmap from Resource app icon, downsample 
+   if needed to fit in 200x200 ImageView, async */
+EpicBitmapRenderer.decodeBitmapFromResource(getResources(), 
+        R.mipmap.ic_launcher,
+        200, 200,
+        new OnBitmapRendered() {
+            @Override
+            public void onBitmapRendered(Bitmap bitmap) {
+                //Display rendered Bitmap when successfully decoded
+                ImageView imageView = 
+                          (ImageView) findViewById(R.id.imgViewId);
+                imageView.setImageBitmap(bitmap);
             }
         },
-        <span class="pl-k">new</span> <span class="pl-smi">OnBitmapRenderFailed</span>() {
-            <span class="pl-k">@Override</span>
-            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onBitmapRenderFailed</span>(<span class="pl-smi">Exception</span> <span class="pl-v">e</span>) {
-                <span class="pl-c">//Take actions if Bitmap fails to render</span>
-                <span class="pl-smi">Toast</span><span class="pl-k">.</span>makeText(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, 
-                        <span class="pl-s"><span class="pl-pds">"</span>Failed to load Bitmap from Resource: <span class="pl-pds">"</span></span> <span class="pl-k">+</span> e<span class="pl-k">.</span>getMessage(), 
-                        <span class="pl-smi">Toast</span><span class="pl-c1"><span class="pl-k">.</span>LENGTH_SHORT</span>)<span class="pl-k">.</span>show();
+        new OnBitmapRenderFailed() {
+            @Override
+            public void onBitmapRenderFailed(Exception e) {
+                //Take actions if Bitmap fails to render
+                Toast.makeText(MainActivity.this, 
+                        "Failed to load Bitmap: " + 
+                        e.getMessage(), 
+                        Toast.LENGTH_SHORT).show();
             }
-        });</pre></div>
+        });
+								</code>
+							</pre>
+						</div>
+						
+						<span class="after"></span>						
+					</div>
+					
+					<div class="row">
+						
+					</div>
+				</div>
+			</div>
+			
+			<a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+			
+			<div id="content-contribute" class="content-b">
+				<div class="container">
+					<div class="row">
+						<div class="content-body">
+							<h2>Contribute</h2>
 
-<p>And that's it! EpicBitmapRenderer decodes the Bitmap asynchronously in a worker thread, stores it in memory and disk cache, and, if successful, returns decoded Bitmap at the end of the process on the onBitmapRendered(Bitmap) callback. Further calls to render methods pointing to the same resource, will obtain the decoded Bitmap from memory or disk cache if available, instead of rendering the resource again, thus saving memory usage.</p>
-
-<p>Almost every decoding method has an alternate, overloaded synchronous method (same arguments without callbacks) in case you need them, but it's not recommended as they run on the UI thread and can freeze the app. Here is the same example as before, but calling the synchronous method:</p>
-
-<div class="highlight highlight-source-java"><pre><span class="pl-smi">Bitmap</span> decodedBitmap <span class="pl-k">=</span> <span class="pl-smi">EpicBitmapRenderer</span><span class="pl-k">.</span>decodeBitmapFromResource(getResources(), 
-        <span class="pl-smi">R</span><span class="pl-k">.</span>mipmap<span class="pl-k">.</span>ic_launcher, <span class="pl-c1">200</span>, <span class="pl-c1">200</span>);
-((<span class="pl-smi">ImageView</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>imgSampleDecodeResource))<span class="pl-k">.</span>setImageBitmap(decodedBitmap);</pre></div>
-
-<h2>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
-
-<p>You can help improve EpicBitmapRenderer in many ways, some of which are:</p>
-
-<ul>
-<li>Adding new image decoding methods, from different kinds of sources, to different image formats.</li>
-<li>Improving cache and other core elements' functionality.</li>
-<li>Reporting and/or fixing bugs, issues, etc.</li>
-</ul>
-
-<p>Just fork the project, modify what you want, and make a pull request to master Branch. Please, follow library structure and coding style when contributing, and make sure that your code compiles.</p>
-
-<p>If you add a new decoding method, please add an example of usage in samples app module as well, and update the documentation to match any changes you make.</p>
-
-<h3>
-<a id="1--project-structure" class="anchor" href="#1--project-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.- Project Structure</h3>
-
-<p><img src="http://isaacrf.com/libs/epicbitmaprenderer/images/ProjectStructure.png" alt="Project Structure from Android Studio"></p>
-
-<p>EpicBitmapRenderer is an Android Studio project divided in 2 main modules:</p>
-
-<ul>
-<li>epicbitmaprenderer</li>
-<li>samples</li>
-</ul>
-
-<h4>
-<a id="11--epicbitmaprenderer-module" class="anchor" href="#11--epicbitmaprenderer-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1.- epicbitmaprenderer module</h4>
-
-<p>epicbitmaprenderer is an Android Library module containing all the library code. This module is divided into the following packages:</p>
-
-<ul>
-<li>
-<strong>core:</strong> This package stores all the core code of the library divided into 2 classes, EpicBitmapRenderer, containing all Bitmap decoding and rendering methods, and EpicBitmapCache, a dual cache class to handle automatic image caching on memory and disk.</li>
-<li>
-<strong>asynctasks:</strong> Different asynctasks used by core package, mainly by EpicBitmapRenderer to decode Bitmaps asynchronously.</li>
-<li>
-<strong>listeners:</strong> Interfaces for callback definitions. Used to expose a template to override callbacks and handle decoding results.</li>
-<li>
-<strong>utils:</strong> Helper classes used for different tasks, such as handling disk cache and performing IO reading/writing operations.</li>
-</ul>
-
-<h4>
-<a id="12--samples-module" class="anchor" href="#12--samples-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.- samples module</h4>
-
-<p>samples is an Android app module containing a single Main Activity with different Bitmap decoding examples. This app can be deployed on an Android device or virtual machine to test library functionalities.</p>
-
-<p>When adding new decoding methods from new sources or to new formats, this activity must be updated with examples of method usage.</p>
-
-<h3>
-<a id="2--known-issues--todo-features-list" class="anchor" href="#2--known-issues--todo-features-list" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.- Known issues / todo features list</h3>
-
-<ul>
-<li>[ ] Find a way to initialize disk cache automatically on EpicBitmapCache (needs application context), without asking the user to call a method (initDiskCache) passing Context as parameter. Context is just used to retrieve app's cache dir</li>
-<li>[ ] Allow to clear cache or force rendering from source skipping cache check task</li>
-<li>[ ] Allow to enable / disable automatic image caching</li>
-</ul>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/IsaacRF/EpicBitmapRenderer">EpicBitmapRenderer</a> is maintained by <a href="https://github.com/IsaacRF">IsaacRF</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
+							<!-- <p>I invest my time in offering useful, open source tools to the developers community for free. Just by donating the price of a coffee, you help me to keep domains up, my development tools up to date, and my brain awake and full of energy</p> -->
+							
+							<p>Do you like this project?</p>
+							
+							<a href="https://www.paypal.me/buttershystudios/1" target="_blank" class="donateButton">Buy me a coffee</a>
+							
+							<p>New render methods or functionalities in mind? Improve the library by forking the repository, or opening an issue on GitHub.</p>
+							
+							<a href="https://github.com/IsaacRF/EpicBitmapRenderer/fork" target="_blank" class="githubButton">Fork on GitHub</a>
+							<a class="github-button" href="https://github.com/isaacrf/epicbitmaprenderer/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/isaacrf/epicbitmaprenderer#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue isaacrf/epicbitmaprenderer on GitHub">Issue</a>
+							
+							<p>Starring and watching the project also helps growing it up.</p>
+							
+							<a class="github-button" href="https://github.com/isaacrf/epicbitmaprenderer" data-icon="octicon-star" data-style="mega" data-count-href="/isaacrf/epicbitmaprenderer/stargazers" data-count-api="/repos/isaacrf/epicbitmaprenderer#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star isaacrf/epicbitmaprenderer on GitHub">Star</a>
+							<a class="github-button" href="https://github.com/isaacrf/epicbitmaprenderer" data-icon="octicon-eye" data-style="mega" data-count-href="/isaacrf/epicbitmaprenderer/watchers" data-count-api="/repos/isaacrf/epicbitmaprenderer#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch isaacrf/epicbitmaprenderer on GitHub">Watch</a>						
+						</div>
+						
+						<div class="content-image">
+							<img src="img/contribute.png" alt="Contribute to EpicBitmapRenderer project">
+						</div>
+						
+						<span class="after"></span>
+						
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		
+		<footer class="site-footer">
+			<div class="site-footer-owner">
+				<div class="site-footer-owner-info">
+					<img id="imgAuthor" src="img/isaacrf.png" alt="Isaac RF, developer and designer">
+					<div>Developer / Designer</div>
+					<a href="https://twitter.com/isaacrf239" target="_blank" class="social_twitter_user">@IsaacRF239</a>
+					
+					<a href="https://github.com/IsaacRF/EpicBitmapRenderer" target="_blank">EpicBitmapRenderer</a> is maintained by <a href="https://github.com/IsaacRF/EpicBitmapRenderer/graphs/contributors" target="_blank">an epic developers community</a> and <a href="http://isaacrf.com/about" target="_blank">IsaacRF</a>.
+				</div>
+				
+				<div class="site-footer-owner-social">
+					<p>Follow me:</p>
+					<ul class="social_icons_list">
+						<li><a href="https://github.com/isaacrf" target="_blank" rel="nofollow"><img class="social_icon" src="img/ic_gh.png" alt="Follow Isaac RF on GitHub"></a></li>
+						<li><a href="https://twitter.com/isaacrf239" target="_blank" rel="nofollow"><img class="social_icon" src="img/ic_tt.png" alt="Follow Isaac RF on Twitter"></a></li>
+						<li><a href="https://www.facebook.com/IsaacRF" target="_blank" rel="nofollow"><img class="social_icon" src="img/ic_fb.png" alt="Follow Isaac RF on Facebook"></a></li>
+						<li><a href="https://www.linkedin.com/in/isaacrf239/en" target="_blank" rel="nofollow"><img class="social_icon" src="img/ic_in.png" alt="Follow Isaac RF on LinkedIn"></a></li>
+						<li><a href="http://isaacrf.com/about" target="_blank" rel="nofollow"><img class="social_icon" src="img/ic_web.png"  alt="Visit Isaac RF website"></a></li>						
+					</ul>
+				</div>
+				
+				<span class="after"></span>
+			</div>
+			
+		</footer>
+	</body>
 </html>
