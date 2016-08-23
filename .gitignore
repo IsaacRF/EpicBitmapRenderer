@@ -1,0 +1,9 @@
+*.iml
+*.properties
+*.json
+.gradle
+.idea
+build
+epicbitmaprenderer
+samples
+CNAME
